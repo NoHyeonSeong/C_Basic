@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 int main(void) {
-	int a, b, h;
+	double a, b;
 
-	puts("사다리꼴의 넓이를 구합니다.");
-	printf("윗변 : "); scanf("%d", &a);
-	printf("밑변 : "); scanf("%d", &b);
-	printf("높이 : "); scanf("%d", &h);
+	puts("2개의 실수를 입력하세요.");
+	printf("실수 a : "); scanf("%lf", &a);
+	printf("실수 b : "); scanf("%lf", &b);
 
-	printf("넓이는 %f입니다.\n", (a + b) * h / 2.0);
+	printf("a 값은 b의 %f%%입니다.\n", (double)a / b * 100.0);
+
 	return 0;
 }
