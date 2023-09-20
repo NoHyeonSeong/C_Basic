@@ -15,8 +15,8 @@ int main(void) {
 	puts("관계식의 값");
 	printf("A > B인값 : %d\n", a > b);
 	printf("A < B인값 : %d\n", a < b);
-	printf("A >= B인값 : %d\n", a > b);
-	printf("A <= B인값 : %d\n", a < b);
+	printf("A >= B인값 : %d\n", a >= b);
+	printf("A <= B인값 : %d\n", a <= b);
 
 	return EXIT_SUCCESS;
 }
