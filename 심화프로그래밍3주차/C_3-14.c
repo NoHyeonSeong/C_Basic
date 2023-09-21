@@ -3,7 +3,6 @@
 
 int main(void) {
 	int a, b;
-	int max, min;
 	puts("2개의 정수를 입력하세요.");
 	printf("정수 A : ");	scanf("%d", &a);
 	printf("정수 B : ");	scanf("%d", &b);
