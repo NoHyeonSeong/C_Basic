@@ -27,3 +27,4 @@ int main(void) {
 
 	return EXIT_SUCCESS;
 }
+//변수와 출력코드는는 같은 공간안에 있어야 제대로 작동한다.
