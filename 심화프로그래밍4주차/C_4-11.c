@@ -2,18 +2,22 @@
 #include <stdlib.h>
 
 int main(void) {
-	int i = 0;
 	int no;
-	printf("양의 정수: ");
-	scanf("%d", &no);
-	while(i < no){
-		if(i % 2 == 0){
-			putchar('+');
+
+	do{
+		printf("양의 정수를 입력하세요: ");
+		scanf("%d", &no);
+		if(no <= 0){
+			puts("/a양의 정수만 입력하세요.");
 		}
-		else{
-			putchar('-');
-		}
-		i++;
+	}while(no <= 0);
+
+	printf("%d을(를) 거꾸로 읽으면 ", no);
+	while(no > 0){
+		printf("%d", no % 10);
+		no /= 10;
 	}
+	puts("입니다.");
+
 	return 0;
 }
