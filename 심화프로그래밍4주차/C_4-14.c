@@ -2,15 +2,18 @@
 #include <stdlib.h>
 
 int main(void) {
-	int i, no;
+	int i;
+	int sum = 0;
+	int n;
 
-	printf("양의 정수를 입력하세요 : ");
-	scanf("%d", &no);
+	printf("n의 값: ");
+	scanf("%d", &n);
 
-	for(i = 1; i <= no; i++){
-		printf("%d", i % 10);
+	for(i = 1; i <= n; i++){
+		sum += ;
 	}
-	putchar("\n");
+
+	printf("1부터 %d까지의 합은 %d입니다.\n", n, sum);
 
 	return 0;
 }
