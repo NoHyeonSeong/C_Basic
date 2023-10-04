@@ -1,13 +1,30 @@
-
 #include <stdio.h>
-#define NUMBER 7
+#define NUMBER 96
 
 int main(void) {
-	double a;
-	int b;
+	int i, num;
+	int a[NUMBER];
 
-	a= b = 1.5;
-	printf("a = %.1f b = %d\n", a, b);
+	printf("데이터 수: ");
+
+	do{
+		scanf("%d", &num);
+		if(num < 1 || num > NUMBER){
+			printf("\aa1~%d 사이로 입력해주세요. ", NUMBER);
+		}
+	}while(num < 1 || num > NUMBER);
+
+	for(i = 0; i < num; i++){
+		printf("%2d번 :  ", i + 1);
+		scanf("%d", &a[i]);
+	}
+
+	printf("{");
+
+	for(i = 0; i < num - 1; i++){
+		printf("%d ", a[i]);
+	}
+	printf("%d}\n", a[i]);
 
 	return 0;
 }
