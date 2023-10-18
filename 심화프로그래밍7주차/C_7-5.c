@@ -1,39 +1,32 @@
 #include<stdio.h>
 #include<limits.h>
 
-
-unsigned pow2(unsigned no){
-	unsigned pw = 1;
-
-	while(no--){
-		pw *= 2;
+int count_bits(unsigned x){
+	int bits = 0;
+	while(x){
+		if (x & 1U){
+			bits++;
+			x >>= 1;
+		}
 	}
-	return pw;
+	return bits;
+}
+
+int int_bits(void){
+	return count_bits(~0U);
+}
+
+void print_bits(unsigned x){
+	int i;
+	for(i = int_bits() - 1; i >= 0; i--){
+		putchar(((x >> i) & 1U) ? '1' : '0');
+	}
 }
 
 int main(){
-	unsigned m_pow, d_pow, l_sht, r_sht;
-	unsigned x, n;
+	unsigned x;
 
-	printf("부호 없는 정수 x를 n비트 시프트합니다.\n");
-	printf("x : ");	scanf("%u", &x);
-	printf("n : ");	scanf("%u", &n);
-
-	m_pow = x * pow2(n);
-	d_pow = x / pow2(n);
-
-	l_sht = x << n;
-	r_sht = x >> n;
-
-	printf("[a] X x (2의 %u제곱) == %u\n", n, m_pow);
-	printf("[b] X % (2의 %u제곱) == %u\n", n, d_pow);
-	printf("[c] X << %u == %u\n", n, l_sht);
-	printf("[d] X >> %u == %u\n", n, r_sht);
-
-	printf("[a]와 [c]의 값은 일치%s.\n",
-			(r_sht == d_pow) ? "합니다" : "하지 않습니다.");
-	printf("[b]와 [d]의 값은 일치%s.\n",
-			(r_sht == d_pow) ? "합니다" : "하지 않습니다.");
-
+	printf("음이 아닌 정수 : ");		scanf("%u", &x);
+	printf("이 정수의 내용은 ");		print_bits(x); printf("입니다.\n");
 	return 0;
 }
